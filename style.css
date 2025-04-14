@@ -1,0 +1,321 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+    margin: 0;
+    background-color: #f0f2f5; /* Lighter grey background */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container { /* Add a container for better centering and max-width */
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #1c3d5a; /* Dark blue heading */
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.input-area {
+    /* Removed background/padding from here, moved to .container */
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px; /* Increased spacing */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px; /* Increased spacing */
+    font-weight: 600; /* Slightly bolder labels */
+    color: #555;
+}
+
+select,
+textarea {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Slightly more rounded corners */
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s ease; /* Smooth transition on focus */
+}
+
+select:focus,
+textarea:focus {
+    border-color: #007bff; /* Highlight focus */
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px; /* Set a minimum height */
+}
+
+.button-group { /* Group buttons for better layout */
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-top: 20px;
+    margin-bottom: 15px; /* Add margin below the start/stop buttons */
+}
+
+button {
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    padding: 12px 20px; /* Larger padding */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Smooth transitions */
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+button:active:not(:disabled) {
+    transform: scale(0.98); /* Slight press effect */
+}
+
+button:disabled {
+    background-color: #adb5bd; /* Grey for disabled */
+    cursor: not-allowed;
+}
+
+button#stop-btn {
+    background-color: #dc3545; /* Red for stop */
+}
+
+button#stop-btn:hover:not(:disabled) {
+    background-color: #c82333;
+}
+
+button#log-btn {
+    background-color: #28a745; /* Green for log */
+}
+
+button#log-btn:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+button.delete-btn { /* Style for the delete button */
+    background-color: #e74c3c; /* Red color */
+    padding: 5px 10px; /* Smaller padding */
+    font-size: 0.9em;
+}
+
+button.delete-btn:hover:not(:disabled) {
+    background-color: #c0392b; /* Darker red on hover */
+}
+
+.confirm-action { /* Style for the confirm button and note container */
+    margin-top: 15px; /* Add space above */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.export-action {
+    text-align: center; /* Center the button */
+    margin-top: 20px; /* Add space above the button */
+}
+
+#export-btn {
+    background-color: #28a745; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#export-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.log-note { /* Style for the new note */
+    font-size: 0.9em;
+    color: #6c757d; /* Grey text */
+    margin-left: 5px;
+}
+
+#status {
+    margin-top: 15px;
+    font-style: italic;
+    color: #555;
+    min-height: 1.6em; /* Reserve space to avoid layout shifts */
+}
+
+h2 {
+    margin-top: 40px; /* Increased spacing */
+    margin-bottom: 20px;
+    color: #1c3d5a;
+    border-bottom: 2px solid #e9ecef; /* Underline heading */
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+#log-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Softer shadow */
+    border-radius: 8px; /* Rounded corners for the table */
+    overflow: hidden; /* Ensures border-radius applies to children */
+}
+
+#log-table th,
+#log-table td {
+    border: none; /* Remove cell borders */
+    border-bottom: 1px solid #e0e0e0; /* Horizontal lines between rows */
+    padding: 15px; /* Increased padding */
+    text-align: left;
+    vertical-align: middle; /* Align text vertically */
+}
+
+#log-table th {
+    background-color: #e9ecef; /* Light grey header */
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.95em;
+    text-transform: uppercase; /* Uppercase headers */
+    letter-spacing: 0.5px;
+}
+
+#log-table th:last-child,
+#log-table td:last-child {
+    text-align: center; /* Center align content in the last column */
+    width: 80px; /* Fixed width for the action button */
+}
+
+#log-table tbody tr:last-child td {
+    border-bottom: none; /* Remove border from last row */
+}
+
+#log-table tbody tr:hover {
+    background-color: #f8f9fa; /* Slight hover effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: stretch; /* Make buttons full width */
+    }
+
+    .confirm-action {
+        flex-direction: column; /* Stack confirm button and note */
+        align-items: stretch;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    .log-note {
+        display: block; /* Make note appear on its own line */
+        text-align: center;
+        margin-left: 0;
+        margin-top: -5px; /* Adjust spacing */
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    #log-table {
+        display: block;
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    #log-table thead, #log-table tbody, #log-table tr {
+        display: block;
+    }
+
+    #log-table thead {
+        display: none; /* Hide headers in card view */
+    }
+
+    #log-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        position: relative; /* Needed for absolute positioning of delete button if desired */
+    }
+
+    #log-table td {
+        display: flex; /* Use flex for label/value layout */
+        justify-content: space-between; /* Space out label and value */
+        align-items: center;
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 10px; /* Reset padding */
+        padding-right: 10px;
+        text-align: right; /* Align value to the right */
+        white-space: normal;
+        font-size: 0.95em;
+    }
+
+    #log-table td:last-child {
+        border-bottom: none;
+    }
+
+    #log-table td::before {
+        content: attr(data-label); /* Use data-label for content */
+        position: static; /* Remove absolute positioning */
+        font-weight: bold;
+        text-align: left;
+        padding-right: 10px;
+        white-space: nowrap;
+        color: #333;
+    }
+
+    #log-table td:nth-of-type(5) { /* Style for the actions cell in responsive */
+        padding: 10px; /* Adjust padding */
+        justify-content: center; /* Center the delete button */
+    }
+
+    #log-table td:nth-of-type(5)::before {
+        display: none; /* Hide the label for the actions cell */
+    }
+}
+
+@media (max-width: 768px) {
+    .export-action {
+        margin-top: 15px;
+    }
+}

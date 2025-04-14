@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>現場問題報告アプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>現場問題報告</h1>
+
+        <div class="input-area">
+            <div class="form-group">
+                <label for="reporter">報告者:</label>
+                <select id="reporter">
+                    <!-- JavaScriptで追加 -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ship-name">番船名:</label>
+                <select id="ship-name">
+                    <!-- JavaScriptで追加 -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="transcript">報告内容 (音声入力):</label>
+                <textarea id="transcript" rows="5" readonly></textarea>
+            </div>
+
+            <p id="status">待機中...</p>
+
+            <div class="button-group">
+                <button id="start-btn">音声入力開始</button>
+                <button id="stop-btn" disabled>入力停止</button>
+            </div>
+
+            <div class="confirm-action"> 
+                <button id="log-btn">確定</button> 
+                <span class="log-note">再入力したい場合は再度音声入力ボタンを押してください</span> 
+            </div>
+        </div>
+
+        <h2>報告記録</h2>
+        <table id="log-table">
+            <thead>
+                <tr>
+                    <th>日時</th>
+                    <th>報告者</th>
+                    <th>番船名</th>
+                    <th>報告内容</th>
+                    <th>操作</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <!-- JavaScriptで追加 -->
+            </tbody>
+        </table>
+
+        <div class="export-action">
+            <button id="export-btn">エクスポート (CSV)</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
